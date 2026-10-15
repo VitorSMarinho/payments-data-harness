@@ -10,7 +10,22 @@ This is a personal engineering project. It uses only public data and synthetic d
 
 Payment companies hold large volumes of sensitive data and need many data products built on top of it. The slow part is rarely the SQL. It is the chain around it: understanding the request, ingesting the source, proving the data is clean, keeping card numbers and personal identifiers out of places they must not be, documenting lineage, and exposing the result safely.
 
-This project explores whether that chain can be split into small, specialized agents with explicit contracts, a shared typed state and a human approval gate, and what it takes to make that trustworthy: evaluation, logs, traces and access control.
+This project shows how to split that chain between specialized AI agents, each with an explicit contract, a shared typed state and a human approval gate before anything is published. It also covers what it takes to trust such a system: evaluation, logs, traces and access control.
+
+### What it is for
+
+- **Demonstrating how multi-agent systems work in the financial sector**, from specification to exposure of the data.
+- **Serving as an architecture reference**: contracts between agents, PII and PCI protection in two layers, quality as an entry gate, and decisions recorded as ADRs.
+
+## Who it is for
+
+- **Data and AI engineers** who want an example of agent orchestration with governance, not just a single isolated agent.
+- **Data and governance teams** who want to discuss how to apply PII and PCI guardrails in an automated flow.
+- **Learners** who want to follow the build step by step, through the pull request history and the ADRs.
+
+### What this project is not
+
+It is not a production-ready product. It uses only public and synthetic data. Using the ideas in a corporate setting still requires the company's own reviews: security, access control, compliance and evaluation of the chosen models.
 
 ## Architecture
 
