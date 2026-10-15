@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.0
+    hooks:
+      # The linter hook must come before the formatter when --fix is used.
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  # These two run through uv so they use the project's own locked environment.
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: uv run mypy src tests
+        language: unsupported
+        types: [python]
+        pass_filenames: false
+      - id: pytest
+        name: pytest
+        entry: uv run pytest
+        language: unsupported
+        pass_filenames: false
+        always_run: true
